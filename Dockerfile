@@ -1,6 +1,7 @@
 FROM alpine:3.8
 
-ENV DKIM_VER="1.4.1"
+RUN addgroup -S vmail && \
+	adduser -S -G vmail vmail
 
 RUN apk upgrade && \
 	apk add dkimproxy
